@@ -30,11 +30,10 @@ const userSchema = new Schema(
     },
     myTrips:[
     {
-      id: {type: Schema.Types.ObjectId, ref: ‘Event’},
-      id: {type: Schema.Types.ObjectId, ref: ‘Event’},
-      id: {type: Schema.Types.ObjectId, ref: ‘Event’}
+      id: {type: Schema.Types.ObjectId, ref: 'Event'},
+      id: {type: Schema.Types.ObjectId, ref: 'Event'},
+      id: {type: Schema.Types.ObjectId, ref: 'Event'}
     }, 
-
     ]
   },
   {
