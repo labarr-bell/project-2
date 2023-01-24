@@ -8,12 +8,6 @@ const eventSchema = new Schema(
             trim: true,
             required: true
         },
-        //an object or nested subdocument that stores information about the event's location, such as the address, latitude and longitude, and a reference to a Place (if you have one in your models)
-        location: {
-            address: { type: Schema.Types.ObjectId, ref: 'City' },
-            address: { type: Schema.Types.ObjectId, ref: 'City' },
-            address: { type: Schema.Types.ObjectId, ref: 'City' }
-        },
         description: {
             type: String,
             trim: true,
@@ -31,6 +25,11 @@ const eventSchema = new Schema(
         },
         // a string field that stores the URL of an image associated with the event
         image: {
+            type: String,
+            trim: true,
+            required: true
+        },
+        city: {
             type: String,
             trim: true,
             required: true

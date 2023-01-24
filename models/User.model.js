@@ -28,13 +28,7 @@ const userSchema = new Schema(
       type: String,
       trim: true,
     },
-    myTrips:[
-    {
-      id: {type: Schema.Types.ObjectId, ref: 'Event'},
-      id: {type: Schema.Types.ObjectId, ref: 'Event'},
-      id: {type: Schema.Types.ObjectId, ref: 'Event'}
-    }, 
-    ]
+    myTrips:[{type: Schema.Types.ObjectId, ref: 'Event'}]
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    
