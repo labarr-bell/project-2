@@ -28,6 +28,14 @@ app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
+app.use('/', require('./routes/auth.routes'))
+
+const routeGuard = require('../middeleware/route-guard.js');
+
+app.use('/', require('../middeleware/route-guard.js'))
+
+
+
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

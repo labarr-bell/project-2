@@ -10,14 +10,15 @@ const saltRounds = 10
 
 const mongoose = require('mongoose');
 
-// const { isLoggedIn, isLoggedOut} = require('../middeleware/route-guard.js');
+const { isLoggedIn, isLoggedOut} = require('../middeleware/route-guard.js');
 
 
 router.get('/signup', (req, res) => {
     console.log(req.session)
-    // data = {userInsession:req.session.currentUser}
+    let data = {}
+    data = {userInsession:req.session.currentUser}
     console.log(data)
-    res.render('auth/signup')
+    res.render('auth/signup', data)
 })
 
 // Tomoz download bcryptjs (look into Hashedpassword)
@@ -25,10 +26,5 @@ router.get('/signup', (req, res) => {
 
 // look into setting up the salt rounds
 // look into setting up the middleware - route-guard.js
-
-
-
-
-
 
 module.exports = router
