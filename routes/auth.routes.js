@@ -24,10 +24,11 @@ router.post('/add-event', (req, res) => {
 
 router.get('/events', (req, res) => {
     Event.find()
+    
         .then((result) => {
             const eventsObject = { result }
             console.log(eventsObject)
-            res.render('events/event-list', eventsObject)
+            res.render('events/event-list', {eventsObject})
         })
         .catch((err) => console.log(err));
 })

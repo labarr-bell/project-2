@@ -13,7 +13,28 @@ const isLoggedOut = (req, res, next) => {
     next();
 }
 
+// const isAdmin = (req, res, next) => {
+//     if (req.user.role === ‘admin’) {
+//       return res.redirect(‘/admin-panel/’)
+//     } else if(req.user.role != ‘admin’) {
+//       return res.redirect(‘/login’);
+//     }
+//     next();
+//   };
+//   const isAdminOrEditor = (req,res, next) => {
+//     if (req.user.role === ‘admin’) {
+//       return res.redirect(‘/posts-panel/’)
+//     } else if (req.user.role === ‘editor’) {
+//       return res.redirect(‘/posts-panel/’)
+//     } else if (req.user.role != ‘admin’ || req.user.role != ‘editor’) {
+//       return res.redirect(‘/login’);
+//     }
+//     next();
+//   }
+
 module.exports = {
     isLoggedIn,
-    isLoggedOut
+    isLoggedOut,
+    // isAdmin,
+    // isAdminOrEditor
 };
