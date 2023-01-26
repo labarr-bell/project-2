@@ -140,7 +140,6 @@ router.get('/user-profile', (req, res) => {
 
 // Set up user pages & Routes
 
-// look into setting up the salt rounds
 // look into setting up the middleware - route-guard.js
 
 module.exports = router
