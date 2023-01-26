@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-// TODO: Please make sure you edit the User model to whatever makes sense in this case
+
 const userSchema = new Schema(
   {
     firstName: {
@@ -15,14 +15,15 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
+      required: [true, 'Email is required.'],
+      match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.'],
       unique: true,
       lowercase: true,
       trim: true,
     },
-    password: {
+    passwordHash: {
       type: String,
-      required: true
+      required: [true, 'Password is required.']
     }, 
   description: {
       type: String,
@@ -30,8 +31,7 @@ const userSchema = new Schema(
     },
     myTrips:[{type: Schema.Types.ObjectId, ref: 'Event'}]
   },
-  {
-    // this second object adds extra properties: `createdAt` and `updatedAt`    
+  {   
     timestamps: true
   }
 );
