@@ -51,11 +51,11 @@ router.get('/events/:eventId', (req, res) => {
 // create the currentUser
 
 router.get('/signup', (req, res) => {
-    console.log(req.session)
+    console.log(req.body)
     // let data = {}
     // data = {req.session}
     // console.log(data)
-    res.render('auth/signup', req.session)
+    res.render('auth/signup', req.body)
 })
 
 router.post('/signup', (req, res) => {
