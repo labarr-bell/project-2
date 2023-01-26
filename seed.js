@@ -22,11 +22,27 @@ let events = [
         image: './images/little-flea.jpeg',
         city: 'Mumbai'
     }
-]
+];
 
-mongoose.connect('mongodb://127.0.0.1/project-2')
-.then(()=> Event.insertMany(events))
-.then((result)=> {
-  console.log('Seed documents have been created')
-  console.log('Seed Documents: ' + result)
-})
+const MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://127.0.0.1/project-2';
+
+mongoose
+  .connect(MONGODB_URI)
+  .then((db) => {
+    console.log('Connected to db: ', db.connections[0].name);
+    return Event.create(events);
+  })
+  .then((result) => {
+    console.log(`Successfully added ${result.length} events.`);
+    return mongoose.connection.close();
+  })
+  .then(() => {
+    console.log('Db connection closed!');
+  })
+  .catch((err) => {
+    console.log('Something went wrong while seeding db: ', err);
+  });
+
+
+
