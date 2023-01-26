@@ -52,9 +52,10 @@ router.get('/events/:eventId', (req, res) => {
 
 router.get('/signup', (req, res) => {
     console.log(req.session)
-    data = { userInsession: req.session.currentUser }
-    console.log(data)
-    res.render('auth/signup', data)
+    // let data = {}
+    // data = {req.session}
+    // console.log(data)
+    res.render('auth/signup', req.session)
 })
 
 router.post('/signup', (req, res) => {
@@ -83,10 +84,10 @@ router.post('/signup', (req, res) => {
             })
         })
         .then(() => {
-            res.redirect('/event-list')
+            res.redirect('/')
         })
         .catch(error => {
-            if (error instanceof mongoose.Error.VallidationError) {
+            if (error instanceof mongoose.Error.ValidationError) {
                 res.status(500).render('auth/signup', { errorMessage: error.message });
             }
             else if (error.code === 11000) {
@@ -98,7 +99,45 @@ router.post('/signup', (req, res) => {
         });
 })
 
-// Tomoz download bcryptjs (look into Hashedpassword)
+router.get('/login', (req, res) => {
+    console.log(req.session)
+    res.render('auth/login')
+})
+
+// add custom middleware here 
+
+router.post('/login', (req, res) => {
+    console.log("SESSION =====>", req.session)
+    console.log(req.body)
+    const {email,password} = req.body
+
+    if(!email || !password){
+        res.render('auth/login',{errorMessage:'please enter an email or password'})
+    return
+    }
+
+    User.findOne({email})
+    .then(user => {
+        console.log(user)
+        if(!user) {
+            res.render('auth/login', {errorMessage: "User not found please sign up. No account associated with email."})
+        } else if (bcrypt.compareSync(password, user.passwordHash)) {
+            req.session.currentUser = user
+            res.redirect('user/user-profile')
+        } else {
+            res.render('auth/login', {errorMessage: "Incorrect password"})
+        }
+    })
+    .catch((err) => console.log(err));
+})
+
+
+router.get('/user-profile', (req, res) => {
+    res.render('user/user-profile', {userInSession:req.session.currentUser})
+})
+
+
+
 // Set up user pages & Routes
 
 // look into setting up the salt rounds
