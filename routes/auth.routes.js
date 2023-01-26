@@ -1,8 +1,8 @@
 const User = require('../models/User.model');
 const Event = require('../models/Event.model');
 const router = require('express').Router();
-// const bcrypt = require('bcryptjs');
-// const saltRounds = 10 
+const bcrypt = require('bcryptjs');
+const saltRounds = 10 
 const mongoose = require('mongoose');
 // const { isLoggedIn, isLoggedOut} = require('../middeleware/route-guard.js');
 
@@ -52,10 +52,50 @@ router.get('/events/:eventId', (req, res) => {
 
 router.get('/signup', (req, res) => {
     console.log(req.session)
-    let data = {}
     data = { userInsession: req.session.currentUser }
     console.log(data)
     res.render('auth/signup', data)
+})
+
+router.post('/signup', (req, res) => {
+    console.log(req.body)
+    const { email, password } = req.body
+    if (!email || !password) {
+        res.render('auth/signup', { errorMessage: "Please fill in all mandatory fields. Email and password are required." })
+        return
+    }
+    const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+    if (!regex.test(password)) {
+        res.render('auth/signup', { errorMessage: "Please input a password at least 8 characters long, with a lowercase and uppercase letter." })
+        return
+    }
+    bcrypt
+        .genSalt(saltRounds)
+        .then((salt) => {
+            console.log("Salt: ", salt)
+            return bcrypt.hash(password, salt)
+        })
+        .then(hashedPassword => {
+            console.log("Hashed Password: ", hashedPassword)
+            return User.create({
+                email: email,
+                passwordHash: hashedPassword
+            })
+        })
+        .then(() => {
+            res.redirect('/event-list')
+        })
+        .catch(error => {
+            if (error instanceof mongoose.Error.VallidationError) {
+                res.status(500).render('auth/signup', { errorMessage: error.message });
+            }
+            else if (error.code === 11000) {
+                res.render('auth/signup', { errorMessage: "There is already an account associated with the email please sign in or sign up with a new email" })
+            }
+            else {
+                next(error);
+            }
+        });
 })
 
 // Tomoz download bcryptjs (look into Hashedpassword)
