@@ -30,9 +30,9 @@ app.use("/", indexRoutes);
 
 app.use('/', require('./routes/auth.routes'))
 
-//const {isLoggedIn, isLoggedOut} = require('../middeleware/route-guard.js');
+//const {isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
 
-//app.use('/', require('../middeleware/route-guard.js'))
+//app.use('/', require('../middleware/route-guard.js'))
 
 
 
