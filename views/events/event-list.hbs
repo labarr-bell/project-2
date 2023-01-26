@@ -1,1 +1,12 @@
 <h1>Event List Page</h1>
+
+
+{{#each result}}
+    <div>
+         <h2>{{eventName}}</h2>
+         <img src="{{image}}" alt="">
+        <h5>Description: {{description}}</h5>
+        <a href="/events/{{_id}}">More Details</a>
+    </div>
+    <br>
+{{/each}}
