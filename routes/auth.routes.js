@@ -138,4 +138,16 @@ router.post('/logout', (req, res, next) => {
     });
   });
 
+  router.post('/')
+
+
+
+
+// Make delete route
+// Create “My Trips” - still do 
+// Add an event to “My Trips” - still to do 
+// Delete an event from “My Trips” - Work in progress
+// Create an event for “My Trip” - done need to populate on my trips page.
+// 
+
 module.exports = router
