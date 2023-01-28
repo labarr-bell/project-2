@@ -4,7 +4,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const saltRounds = 10 
 const mongoose = require('mongoose');
-// const { isLoggedIn, isLoggedOut} = require('../middeleware/route-guard.js');
+const { isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
 
 
 // create the event routes 
@@ -24,10 +24,8 @@ router.post('/add-event', (req, res) => {
 
 router.get('/events', (req, res) => {
     Event.find()
-        .then((result) => {
-            const eventsObject = { result }
-            console.log(eventsObject)
-            res.render('events/event-list', eventsObject)
+        .then((events) => {
+            res.render('events/event-list', {events})
         })
         .catch((err) => console.log(err));
 })
@@ -50,12 +48,9 @@ router.get('/events/:eventId', (req, res) => {
 
 // create the currentUser
 
-router.get('/signup', (req, res) => {
-    console.log(req.body)
-    // let data = {}
-    // data = {req.session}
-    // console.log(data)
-    res.render('auth/signup', req.body)
+router.get('/signup', isLoggedOut, (req, res) => {
+    // data = {userInSession:req.session.currentUser}
+    res.render('auth/signup')
 })
 
 router.post('/signup', (req, res) => {
@@ -99,7 +94,7 @@ router.post('/signup', (req, res) => {
         });
 })
 
-router.get('/login', (req, res) => {
+router.get('/login', isLoggedOut,  (req, res) => {
     console.log(req.session)
     res.render('auth/login')
 })
@@ -123,7 +118,7 @@ router.post('/login', (req, res) => {
             res.render('auth/login', {errorMessage: "User not found please sign up. No account associated with email."})
         } else if (bcrypt.compareSync(password, user.passwordHash)) {
             req.session.currentUser = user
-            res.redirect('user/user-profile')
+            res.redirect('/user-profile')
         } else {
             res.render('auth/login', {errorMessage: "Incorrect password"})
         }
@@ -132,14 +127,27 @@ router.post('/login', (req, res) => {
 })
 
 
-router.get('/user-profile', (req, res) => {
+router.get('/user-profile', isLoggedIn, (req, res) => {
     res.render('user/user-profile', {userInSession:req.session.currentUser})
 })
 
+router.post('/logout', (req, res, next) => {
+    req.session.destroy(err => {
+      if (err) next(err);
+      res.redirect('/');
+    });
+  });
+
+  router.post('/')
 
 
-// Set up user pages & Routes
 
-// look into setting up the middleware - route-guard.js
+
+// Make delete route
+// Create “My Trips” - still do 
+// Add an event to “My Trips” - still to do 
+// Delete an event from “My Trips” - Work in progress
+// Create an event for “My Trip” - done need to populate on my trips page.
+// 
 
 module.exports = router
