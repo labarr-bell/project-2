@@ -1,12 +1,32 @@
-
 <h1>This is My Trips page</h1>
 
 {{#if userInSession}}
-  <h2>Welcome, {{ userInSession.firstName }}!</h2>
+  <h2>Welcome, {{userInSession.email}}!</h2>
+  <h1>Trip itinerary Page</h1>
+
+  <div class="trip-container">
+
+    <div class="trip-card">
+      <h2>{{tripName}}</h2>
+      <h5>Description: {{description}}</h5>
+      {{#each event}}
+        <div class="event-card">
+          <h2>{{eventName}}</h2>
+          <img src="{{image}}" alt="" />
+          <h5>Description: {{description}}</h5>
+          <a href="/events/{{_id}}">More Details</a>
+        </div>
+        <br />
+      {{/each}}
+
+    </div>
+    <br />
+
+  </div>
   <button>
     <a href="/user-profile">Reload Page</a>
   </button>
+
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}}
-

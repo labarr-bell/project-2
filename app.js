@@ -25,6 +25,12 @@ const projectName = "project-2";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
+app.use((req,res,next) => {
+    console.log('Hello People Dem')
+    app.locals.userInSession = req.session.currentUser
+    next()
+})
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
@@ -34,6 +40,8 @@ app.use('/', require('./routes/auth.routes'));
 app.use('/', require('./routes/event.routes'));
 
 app.use( '/', require('./routes/trip.routes'));
+
+
 
 // const {isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
 

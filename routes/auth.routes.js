@@ -115,16 +115,26 @@ router.post('/logout', (req, res, next) => {
 
 //TRIPS
 // Make delete route
-// Create “My Trips” - still do 
-// Add an event to “My Trips” - still to do 
-// Delete an event from “My Trips” - Work in progress
-// Create an event for “My Trip” - done need to populate on my trips page.
+// Create “My Trips” - DONE
+// Add an event to “My Trips” - DONE
+// Delete an event from “My Trips” - Work in progress TO DO 
+// Create an event for “My Trip” - DONE
 
 // EVENTS
-// update a trip 
-// delete a trip 
+// update a trip - N/A 
+// delete a Event - TO DO
+// delete trip
 // create a trip - done
 // read a trip - done
+
+
+// extra functions
+// add login log out, isAdmin didnt work, create event 
+// add to event schema add more cites
+// need home page
+// add events wasn't working
+// 
+
 
 
 

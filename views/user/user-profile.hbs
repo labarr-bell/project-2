@@ -1,7 +1,7 @@
 <h1>Hi this is the user-profile page</h1>
 
 {{#if userInSession}}
-  <h2>Welcome, {{ userInSession.firstName }}!</h2>
+  <h2>Welcome, {{ userInSession.email }}!</h2>
   <p>This is your profile page my friend!</p>
   <button>
     <a href="/user-profile">Reload the page</a>

@@ -13,14 +13,14 @@ const isLoggedOut = (req, res, next) => {
     next();
 };
 
-const isAdmin = (req, res, next) => {
-    if (req.user.role === 'admin') {
-        return res.redirect('/add-event') // or to the hbs page?
-    } else if (req.user.role = 'user') { 
-        return res.redirect('/login');
-    }
-    next();
-};
+// const isAdmin = (req, res, next) => {
+//     if (req.user.role === 'admin') {
+//         return res.redirect('/add-event') // or to the hbs page?
+//     } else if (req.user.role === 'user') { 
+//         return res.redirect('/login');
+//     }
+//     next();
+// };
 
 // const isAdminOrEditor = (req, res, next) => {
 //     if (req.user.role === 'admin') {
@@ -36,6 +36,6 @@ const isAdmin = (req, res, next) => {
 module.exports = {
     isLoggedIn,
     isLoggedOut,
-    isAdmin
+    // isAdmin
     // isAdminOrEditor
 };
