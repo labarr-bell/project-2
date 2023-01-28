@@ -29,7 +29,9 @@ app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
-app.use('/', require('./routes/auth.routes'))
+app.use('/', require('./routes/auth.routes'));
+
+app.use('/', require('./routes/event.routes'));
 
 // const {isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
 

@@ -11,12 +11,12 @@ const isLoggedOut = (req, res, next) => {
         return res.redirect('/');
     }
     next();
-}
+};
 
 const isAdmin = (req, res, next) => {
     if (req.user.role === 'admin') {
         return res.redirect('/add-event') // or to the hbs page?
-    } else if (req.user.role != 'admin') { // do we assign a role to the user when they log in?
+    } else if (req.user.role = 'user') { 
         return res.redirect('/login');
     }
     next();
