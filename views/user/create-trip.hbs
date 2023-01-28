@@ -1,13 +1,26 @@
 <h1>This is the page to create a trip</h1>
 
 {{#if userInSession}}
+
   <h2>Welcome, {{ userInSession.firstName }}!</h2>
-  <button>
-    <a href="/">Add Event</a>
-  </button>
-  <button>
-    <a href="/">Submit Trip</a>
-  </button>
+
+  Create Event
+
+<form action="/add-trip" method="POST">
+    <label for="">
+        Event Name
+        <input type="text" name="tripName">
+    </label>
+    <label for="">
+        Description
+        <input type="text" name="description">
+    </label>
+    <button type="submit">Create trip</button>
+</form>
+
 {{else}}
   <p>Still no logged in user, sorry!</p>
 {{/if}}
+
+
+

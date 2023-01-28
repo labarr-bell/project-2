@@ -33,6 +33,8 @@ app.use('/', require('./routes/auth.routes'));
 
 app.use('/', require('./routes/event.routes'));
 
+app.use( '/', require('./routes/trip.routes'));
+
 // const {isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
 
 // app.use('/', require('../middleware/route-guard.js'))

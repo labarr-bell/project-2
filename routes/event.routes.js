@@ -2,6 +2,7 @@ const User = require('../models/User.model');
 const Event = require('../models/Event.model');
 const router = require('express').Router();
 const {isAdmin} = require('../middleware/route-guard.js');
+const Trip = require('../models/Trip.model');
 
 
 // create the event routes 
@@ -36,9 +37,16 @@ router.get('/add-event', isAdmin, (req, res) => {
 // read one document using params 
 
 router.get('/events/:eventId', (req, res) => {
-    Event.findById(req.params.eventId)
-        .then((singleEvent) => {
-            res.render('events/event-details', singleEvent)
+    let trips = []
+    Trip.find({
+        user: req.session.currentUser._id
+    })
+    .then((tripForUser) => {
+        trips = tripForUser
+        console.log(trips)
+        return Event.findById(req.params.eventId)
+    })
+    .then((singleEvent) => {res.render('events/event-details', {singleEvent, trips})
         })
         .catch((err) => console.log(err));
 })

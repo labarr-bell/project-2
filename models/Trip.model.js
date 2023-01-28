@@ -1,10 +1,19 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const tripSchema = new Schema({
     user:{type: Schema.Types.ObjectId, ref:"User"},
-    event:[{type:Schema.Types.ObjectId,ref:"Event"}]
+    event:[{type:Schema.Types.ObjectId,ref:"Event"}],
+    tripName: {type: 'String',
+    trim: true,
+    required: true
+},
+description: {
+    type: 'String',
+    trim: true,
+    required: true
+}
 })
 
-const User = model("Trip", tripSchema);
+const Trip = model("Trip", tripSchema);
 
 module.exports = Trip;
