@@ -1,1 +1,14 @@
+<<<<<<< HEAD
 this is the my trips page
+=======
+<h1>This is My Trips page</h1>
+
+{{#if userInSession}}
+  <h2>Welcome, {{ userInSession.firstName }}!</h2>
+  <button>
+    <a href="/user-profile">Reload Page</a>
+  </button>
+{{else}}
+  <p>Still no logged in user, sorry!</p>
+{{/if}}
+>>>>>>> 00acb8a9e4ddc8dac15f37551296de4b7a506a6a
