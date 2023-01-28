@@ -24,15 +24,19 @@
                   <li class="nav-item">
                     <a class="nav-link active link-danger" aria-current="page" href="/">Home</a>
                   </li>
+
+                  <li>
+                    <li class="nav-item">
+                    <input type="text" placeholder="Search..">
+                  </li>
+
                   <li class="nav-item">
                     <a class="nav-link" href="#"> ????</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#"> ???? </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">????</a>
-                  </li>
+
                   <li class="nav-item">
                     <a class="nav-link" href="/signup"> Sign up</a>
                   </li>
@@ -42,10 +46,21 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/user-profile"> Profile</a>
                   </li>
-                  <li>
-                      <form id="logout-form" action="/logout" method="POST">
-    <button>Logout</button>
-  </form>
+                  <form id="logout-form" action="/logout" method="POST">
+                      <button>Logout</button>
+                  </form>
+
+                  <div class="dropdown">
+    <button class="dropbtn">Cities 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" style="left:0;>
+      <a href="#">City 1</a>
+      <a href="#">City 2</a>
+      <a href="#">City 3</a>
+    </div>
+  </div>
+    
                   </li>
                 </ul>
             </div>

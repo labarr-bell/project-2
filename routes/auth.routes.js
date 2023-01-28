@@ -4,7 +4,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const saltRounds = 10 
 const mongoose = require('mongoose');
-const { isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
+const { isLoggedIn, isLoggedOut, isAdmin} = require('../middleware/route-guard.js');
 
 
 // create the event routes 
@@ -78,7 +78,10 @@ router.post('/signup', (req, res) => {
                 passwordHash: hashedPassword
             })
         })
-        .then(() => {
+        .then((result) => {
+            req.session.currentUser = result
+        })
+        .then((result) => {
             res.redirect('/')
         })
         .catch(error => {
@@ -142,12 +145,17 @@ router.post('/logout', (req, res, next) => {
 
 
 
-
+//TRIPS
 // Make delete route
 // Create “My Trips” - still do 
 // Add an event to “My Trips” - still to do 
 // Delete an event from “My Trips” - Work in progress
 // Create an event for “My Trip” - done need to populate on my trips page.
-// 
+
+// EVENTS
+// update a trip 
+// delete a trip 
+// create a trip - done
+// read a trip - done
 
 module.exports = router
