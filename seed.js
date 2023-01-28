@@ -43,6 +43,3 @@ mongoose
   .catch((err) => {
     console.log('Something went wrong while seeding db: ', err);
   });
-
-
-

@@ -13,28 +13,29 @@ const isLoggedOut = (req, res, next) => {
     next();
 }
 
-// const isAdmin = (req, res, next) => {
-//     if (req.user.role === ‘admin’) {
-//       return res.redirect(‘/admin-panel/’)
-//     } else if(req.user.role != ‘admin’) {
-//       return res.redirect(‘/login’);
+const isAdmin = (req, res, next) => {
+    if (req.user.role === 'admin') {
+        return res.redirect('/add-event') // or to the hbs page?
+    } else if (req.user.role != 'admin') { // do we assign a role to the user when they log in?
+        return res.redirect('/login');
+    }
+    next();
+};
+
+// const isAdminOrEditor = (req, res, next) => {
+//     if (req.user.role === 'admin') {
+//         return res.redirect('/event-list') // how do the panels work?
+//     } else if (req.user.role === 'editor') {
+//         return res.redirect('/')
+//     } else if (req.user.role != 'admin' || req.user.role != 'editor') {
+//         return res.redirect('/login');
 //     }
 //     next();
-//   };
-//   const isAdminOrEditor = (req,res, next) => {
-//     if (req.user.role === ‘admin’) {
-//       return res.redirect(‘/posts-panel/’)
-//     } else if (req.user.role === ‘editor’) {
-//       return res.redirect(‘/posts-panel/’)
-//     } else if (req.user.role != ‘admin’ || req.user.role != ‘editor’) {
-//       return res.redirect(‘/login’);
-//     }
-//     next();
-//   }
+// }
 
 module.exports = {
     isLoggedIn,
     isLoggedOut,
-    // isAdmin,
+    isAdmin
     // isAdminOrEditor
 };
