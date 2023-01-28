@@ -10,7 +10,7 @@ const { isLoggedIn, isLoggedOut, isAdmin} = require('../middleware/route-guard.j
 // create the event routes 
 // this route has the same action of the post form in create hbs page 
 
-router.post('/add-event', isAdmin, (req, res) => {
+router.post('/add-event', (req, res) => {
     const { eventName, description, category, price, image, city } = req.body
     Event.create({ eventName, description, category, price, image, city })
         .then((result) => {
@@ -32,7 +32,7 @@ router.get('/events', (req, res) => {
 
 // create the document and make the form visible to used to add an event 
 
-router.get('/add-event', isAdmin, (req, res) => {
+router.get('/add-event', (req, res) => {
     res.render('events/create')
 })
 
@@ -141,7 +141,15 @@ router.post('/logout', (req, res, next) => {
     });
   });
 
-  router.post('/')
+//   router.post('/events/:id/delete', async (req, res) => {
+//     try {
+//       const deletedEvent = await Event.findByIdAndDelete(req.params.id);
+//       res.redirect('/events');
+//     } catch (error) {
+//       console.log(error);
+//       res.redirect('/events');
+//     }
+//   });
 
 
 
