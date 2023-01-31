@@ -51,4 +51,14 @@ router.get('/events/:eventId', (req, res) => {
         .catch((err) => console.log(err));
 })
 
+router.post('/events/:id/delete', async (req, res) => {
+    try {
+    const deletedEvent = await Event.findByIdAndDelete(req.params.id);
+    res.redirect('/events');
+    } catch (error) {
+    console.log(error);
+    res.redirect('/events');
+    }
+    });
+
 module.exports = router;
