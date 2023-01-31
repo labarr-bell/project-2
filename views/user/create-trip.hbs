@@ -14,18 +14,23 @@
   <h1>This is the page to create a trip</h1>
   {{#if userInSession}}
     <h2>Welcome, {{ userInSession.firstName }}!</h2>
-    <h3>Create Event</h3>
+    <h3>Create Trip</h3>
     <form action="/add-trip" method="POST">
       <label for="">
-        Event Name
+        Trip Name
         <input type="text" name="tripName">
       </label>
       <label for="">
-        Description
+        Describe your trip
         <input type="text" name="description">
       </label>
       <button type="submit">Create trip</button>
     </form>
+
+  <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
+    <button type="submit">Cancel Trip</button>
+  </form>
+
   {{else}}
     <p>Still no logged in user, sorry!</p>
   {{/if}}

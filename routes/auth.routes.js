@@ -9,13 +9,12 @@ const { isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
 // create the currentUser
 
 router.get('/signup', isLoggedOut, (req, res) => {
-    // data = {userInSession:req.session.currentUser}
     res.render('auth/signup')
 })
 
 router.post('/signup', (req, res) => {
     console.log(req.body)
-    const { email, password } = req.body
+    const {email, password } = req.body
     if (!email || !password) {
         res.render('auth/signup', { errorMessage: "Please fill in all mandatory fields. Email and password are required." })
         return
@@ -42,7 +41,7 @@ router.post('/signup', (req, res) => {
             req.session.currentUser = result
         })
         .then((result) => {
-            res.redirect('/')
+            res.redirect('/trips')
         })
         .catch(error => {
             if (error instanceof mongoose.Error.ValidationError) {
@@ -106,18 +105,18 @@ router.post('/logout', (req, res, next) => {
 
 
 //TRIPS
-// Make delete route - NICOLE
+// Make delete route - NICOLE - done
 // add links to pages/ - CAM 
 // populate home page - CAMgi
 // Create “My Trips” - DONE
 // Add an event to “My Trips” - DONE
-// Delete an event from “My Trips” - Work in progress TO DO - NICOLE
+// Delete an event from “My Trips” - NICOLE - done
 // Create an event for “My Trip” - DONE
 
 // EVENTS
 // update a trip - N/A 
-// delete a Event - TO DO
-// delete trip - NIC
+// delete a Event - TO DO - done 
+// delete trip - NIC - done
 // create a trip - done
 // read a trip - done
 
