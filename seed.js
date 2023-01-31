@@ -24,6 +24,20 @@ let events = [
     }
 ];
 
+let londonEvents = [
+  {
+    eventName: 'MAMI Film Festival',
+    description: 'A big movie festival in Mumbai',
+    category: 'Festival',
+    price: 22,
+    image: './images/MAMI.png',
+    city: 'Mumbai'
+
+  }
+];
+
+
+
 const MONGODB_URI =
   process.env.MONGODB_URI || 'mongodb://127.0.0.1/project-2';
 
