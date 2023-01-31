@@ -105,27 +105,27 @@ router.post('/logout', (req, res, next) => {
 
 
 //TRIPS
+
+// populate home page - CAM to do....  
+// add to event schema add more cites - CAM/NIC
+// need home page - 
+// CSS
+
+
+// Done 
 // Make delete route - NICOLE - done
-// add links to pages/ - CAM 
-// populate home page - CAM to do....
+// add links to pages/ - CAM -done
 // Create “My Trips” - DONE
 // Add an event to “My Trips” - DONE
 // Delete an event from “My Trips” - NICOLE - done
 // Create an event for “My Trip” - DONE
-
-// EVENTS
 // update a trip - N/A 
 // delete a Event - TO DO - done 
 // delete trip - NIC - done
 // create a trip - done
 // read a trip - done
-
-// extra functions
-// add login log out, isAdmin didnt work, create event 
-// add to event schema add more cites - CAM/NIC
-// need home page - 
-// CSS
-// 
+// add login log out, - done 
+// create event - done 
 
 
 
