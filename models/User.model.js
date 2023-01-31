@@ -28,10 +28,6 @@ const userSchema = new Schema(
       enum: ['user', 'admin'], 
       default: 'user'
     }, 
-  description: {
-      type: String,
-      trim: true,
-    },
     myTrips:[{type: Schema.Types.ObjectId, ref: 'Event'}]
   },
   {   

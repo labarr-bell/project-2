@@ -20,27 +20,37 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active link-danger" aria-current="page" href="/">Home</a>
-        </li>
+      
         <li class="nav-item">
           <input type="text" placeholder="Search..">
         </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cities
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">City 1</a>
+            <a class="dropdown-item" href="#">City 2</a>
+            <a class="dropdown-item" href="#">City 3</a>
+          </div>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/events">Events</a>
         </li>
        <li class="nav-item">
   {{#if userInSession}}
-    <a class="nav-link" href="/add-event">Add Event</a>
+    <a class="nav-link" href="/trips">Add Trip</a>
   {{else}}
-    <a class="nav-link" href="/login">Add Event</a>
+    <a class="nav-link" href="/login" style="display:none">Add Trip</a>
   {{/if}}
 </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/trips/{{eventId}}">My Trip</a>
-        </li>
         {{#if userInSession}}
           <li class="nav-item">
+          <a class="nav-link" href="/user-profile">My Trips</a>
+        </li>
+        <li class="nav-item">
             <form action="/logout" method="POST">
               <button type="submit"> Logout </button>
             </form>
@@ -53,19 +63,7 @@
             <a class="nav-link" href="/login">Login</a>
           </li>
         {{/if}}
-        <li class="nav-item">
-          <a class="nav-link" href="/user-profile">Profile</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Cities
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">City 1</a>
-            <a class="dropdown-item" href="#">City 2</a>
-            <a class="dropdown-item" href="#">City 3</a>
-          </div>
-        </li>
+    
       </ul>
     </div>
   </nav>
