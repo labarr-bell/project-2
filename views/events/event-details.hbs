@@ -21,9 +21,11 @@
 <h5>Price: {{singleEvent.price}}</h5>
 <h5>Location: {{singleEvent.city}}</h5>
 <img src="{{singleEvent.image}}" alt="">
+
   <form id="delete-form" action="/events/:id/delete" method="POST">
     <button>Delete Event</button>
   </form>
+  
   <br>
   <form id="add-to-trips" action="/trips/{{singleEvent._id}}" method="POST">
   <select name="tripId">{{#each trips}} 
