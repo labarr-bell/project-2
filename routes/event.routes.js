@@ -53,13 +53,15 @@ router.get('/events/:eventId', (req, res) => {
 })
 
 router.post('/events/:eventId/delete', (req, res, next) => {
-    Event.findByIdAndRemove(req.params.eventId)
-    .then(() => {
-        res.redirect('/events')
+    const {eventId} = req.params.eventId;
+    Event.findByIdAndDelete(eventId)
+      .then(() => { res.redirect('/events') 
     })
-    .catch((err)=> {
-        console.log('The error while deleting the event-details is, ', err)
-    })
-})
+      
+      .catch((err)=> {
+          console.log('The error while deleting the event-details is, ', err)
+      })
+  })
+
 
 module.exports = router;

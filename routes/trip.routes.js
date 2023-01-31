@@ -23,6 +23,10 @@ router.get("/trips", isLoggedIn, (req, res) => {
   res.render("user/create-trip", { userInSession: req.session.currentUser });
 });
 
+router.get('/my-trips', isLoggedIn, (req, res) => {
+  res.render('user/my-trips')
+})
+
 // creating trip with user id
 router.post("/trips/:eventId", isLoggedIn, (req, res, next) => {
   const { eventId } = req.params;
@@ -50,8 +54,24 @@ router.get("/trips/:tripId", isLoggedIn, (req, res, next) => {
     });
 });
 
+// na attempt at creating a route to the trip 
+// router.get("/my-trips/:tripId", isLoggedIn, (req, res, next) => {
+//   const { tripId } = req.params;
+//   Trip.findById(tripId)
+//     .populate("event")
+//     .then((trip) => {
+//       console.log("trip found", trip);
+//       res.render("user/user-profile", trip);
+//     })
+//     .catch((err) => {
+//       console.log("Something went wrong while getting trip id: ", err);
+//       next(err);
+//     });
+// });
+
 
 router.post('/trips/:tripId/delete', (req, res, next) => {
+  const { tripId } = req.params;
   Trip.findByIdAndRemove(req.params.tripId)
   .then(() => {
       res.redirect('/trips')

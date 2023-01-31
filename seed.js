@@ -29,67 +29,55 @@ let events = [
       price: 0,
       image: './images/little-flea.jpeg',
       city: 'Mumbai'
-  }
-];
-
-// let londonEvents = [
-//   {
-//     eventName: 'Tate Modern',
-//     description: 'A contemporary art gallery ',
-//     category: 'Mueseum',
-//     price: 22,
-//     image: './images/MAMI.png',
-//     city: 'Mumbai'
-
-//   },
-//   {
-//     eventName: 'Little Flea Market',
-//     description: 'A local shopping event with curated hand-made goods.',
-//     category: 'Shopping',
-//     price: 0,
-//     image: './images/little-flea.jpeg',
-//     city: 'Mumbai'
-// },
-// {
-//   eventName: 'Little Flea Market',
-//   description: 'A local shopping event with curated hand-made goods.',
-//   category: 'Shopping',
-//   price: 0,
-//   image: './images/little-flea.jpeg',
-//   city: 'Mumbai'
-// }
-// ];
-
-// let newYorkEvents = [
-//   {
-//     eventName: 'Little Flea Market',
-//     description: 'A local shopping event with curated hand-made goods.',
-//     category: 'Shopping',
-//     price: 0,
-//     image: './images/little-flea.jpeg',
-//     city: 'Mumbai'
-
-//   },
-//   {
-//     eventName: 'Little Flea Market',
-//     description: 'A local shopping event with curated hand-made goods.',
-//     category: 'Shopping',
-//     price: 0,
-//     image: './images/little-flea.jpeg',
-//     city: 'Mumbai'
-
-//   },
-//   {
-//     eventName: 'Little Flea Market',
-//     description: 'A local shopping event with curated hand-made goods.',
-//     category: 'Shopping',
-//     price: 0,
-//     image: './images/little-flea.jpeg',
-//     city: 'Mumbai'
-
-//   }
-// ]
-
+  }, 
+  {
+  eventName: 'Tate Modern',
+  description: 'A contemporary art gallery ',
+  category: 'Mueseum',
+  price: 0,
+  image: './images/MAMI.png',
+  city: 'London'
+},
+{
+  eventName: 'Big Ben',
+    description: 'See a big golden clocktower!',
+    category: 'Sightseeing',
+    price: 0,
+    image: './images/little-flea.jpeg',
+    city: 'Mumbai'
+}, 
+{
+  eventName: 'Camden Market',
+    description: 'An old London market with contemporary food and shopping stores.',
+    category: 'Food',
+    price: 0,
+    image: './images/MAMI.png',
+    city: 'London'
+}, {
+    eventName: 'Brooklyn Museum',
+    description: 'A contemporary museum foccused on art from the best artists of today.',
+    category: 'Sightseeing',
+    price: 0,
+    image: './images/MAMI.png',
+    city: 'New York'
+}, 
+{
+  eventName: 'The High Line',
+    description: 'An outdoor garden filled with local flora, fauna and sometimes art!',
+    category: 'Sightseeing',
+    price: 0,
+    image: './images/MAMI.png',
+    city: 'New York'
+}, 
+{
+  eventName: 'Webster Hall',
+    description: 'A concert hall for up and coming artists.',
+    category: 'Concert',
+    price: 50,
+    image: './images/MAMI.png',
+    city: 'New York'
+}
+]
 
 
 const MONGODB_URI =

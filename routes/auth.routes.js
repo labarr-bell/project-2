@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const saltRounds = 10 
 const mongoose = require('mongoose');
 const { isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
+const Trip = require('../models/Trip.model');
 
 // create the currentUser
 
@@ -79,7 +80,8 @@ router.post('/login', (req, res) => {
         if(!user) {
             res.render('auth/login', {errorMessage: "User not found please sign up. No account associated with email."})
         } else if (bcrypt.compareSync(password, user.passwordHash)) {
-            req.session.currentUser = user
+            req.session.currentUser = user.toObject()
+            delete req.session.currentUser.passwordHash
             res.redirect('/user-profile')
         } else {
             res.render('auth/login', {errorMessage: "Incorrect password"})
@@ -90,7 +92,14 @@ router.post('/login', (req, res) => {
 
 
 router.get('/user-profile', isLoggedIn, (req, res) => {
-    res.render('user/user-profile', {userInSession:req.session.currentUser})
+    const { _id } = req.session.currentUser
+    
+    Trip.find({ user: _id })
+    .then((trips) => {
+
+        res.render('user/user-profile', {trips})
+    })
+    .catch((err) => console.log(err));
 })
 
 router.post('/logout', (req, res, next) => {
@@ -104,12 +113,16 @@ router.post('/logout', (req, res, next) => {
 
 
 
-//TRIPS
-
+//To do:
+// #1 Priority MY TRIPS PAGE 
 // populate home page - CAM to do....  
-// add to event schema add more cites - CAM/NIC
 // need home page - 
-// CSS
+// CSS - flexboxed/bootstrapped
+// images for event model 
+// my-trips page 
+// drop down under ADD EVENT should include 5 categories (Sightseeing, Festival, Concert, Shopping, Food)
+// MY TRIPS PAGE 
+// FILTER the cities drop down 
 
 
 // Done 
@@ -126,6 +139,8 @@ router.post('/logout', (req, res, next) => {
 // read a trip - done
 // add login log out, - done 
 // create event - done 
+// add to event schema add more cites - CAM/NIC - done
+
 
 
 
