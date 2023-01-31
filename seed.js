@@ -3,7 +3,7 @@ const Event = require('./models/Event.model');
 
 //Two steps in the seed file
 //1. open up the mongoose connection
-//2. add all of these documents to my collection
+//2. add all of these documents to my colection
 
 let events = [
     {
@@ -21,20 +21,74 @@ let events = [
         price: 0,
         image: './images/little-flea.jpeg',
         city: 'Mumbai'
-    }
-];
-
-let londonEvents = [
-  {
-    eventName: 'MAMI Film Festival',
-    description: 'A big movie festival in Mumbai',
-    category: 'Festival',
-    price: 22,
-    image: './images/MAMI.png',
-    city: 'Mumbai'
-
+    },
+    {
+      eventName: 'Little Flea Market',
+      description: 'A local shopping event with curated hand-made goods.',
+      category: 'Shopping',
+      price: 0,
+      image: './images/little-flea.jpeg',
+      city: 'Mumbai'
   }
 ];
+
+// let londonEvents = [
+//   {
+//     eventName: 'Tate Modern',
+//     description: 'A contemporary art gallery ',
+//     category: 'Mueseum',
+//     price: 22,
+//     image: './images/MAMI.png',
+//     city: 'Mumbai'
+
+//   },
+//   {
+//     eventName: 'Little Flea Market',
+//     description: 'A local shopping event with curated hand-made goods.',
+//     category: 'Shopping',
+//     price: 0,
+//     image: './images/little-flea.jpeg',
+//     city: 'Mumbai'
+// },
+// {
+//   eventName: 'Little Flea Market',
+//   description: 'A local shopping event with curated hand-made goods.',
+//   category: 'Shopping',
+//   price: 0,
+//   image: './images/little-flea.jpeg',
+//   city: 'Mumbai'
+// }
+// ];
+
+// let newYorkEvents = [
+//   {
+//     eventName: 'Little Flea Market',
+//     description: 'A local shopping event with curated hand-made goods.',
+//     category: 'Shopping',
+//     price: 0,
+//     image: './images/little-flea.jpeg',
+//     city: 'Mumbai'
+
+//   },
+//   {
+//     eventName: 'Little Flea Market',
+//     description: 'A local shopping event with curated hand-made goods.',
+//     category: 'Shopping',
+//     price: 0,
+//     image: './images/little-flea.jpeg',
+//     city: 'Mumbai'
+
+//   },
+//   {
+//     eventName: 'Little Flea Market',
+//     description: 'A local shopping event with curated hand-made goods.',
+//     category: 'Shopping',
+//     price: 0,
+//     image: './images/little-flea.jpeg',
+//     city: 'Mumbai'
+
+//   }
+// ]
 
 
 
@@ -45,7 +99,7 @@ mongoose
   .connect(MONGODB_URI)
   .then((db) => {
     console.log('Connected to db: ', db.connections[0].name);
-    return Event.insertMany(events);
+    return Event.create(events);
   })
   .then((result) => {
     console.log(`Successfully added ${result.length} events.`);
