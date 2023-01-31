@@ -107,7 +107,7 @@ router.post('/logout', (req, res, next) => {
 //TRIPS
 // Make delete route - NICOLE - done
 // add links to pages/ - CAM 
-// populate home page - CAMgi
+// populate home page - CAM to do....
 // Create “My Trips” - DONE
 // Add an event to “My Trips” - DONE
 // Delete an event from “My Trips” - NICOLE - done

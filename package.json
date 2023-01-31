@@ -21,5 +21,18 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labarr-bell/project-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labarr-bell/project-2/issues"
+  },
+  "homepage": "https://github.com/labarr-bell/project-2#readme",
+  "description": ""
 }
