@@ -30,9 +30,9 @@
             Cities
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">City 1</a>
-            <a class="dropdown-item" href="#">City 2</a>
-            <a class="dropdown-item" href="#">City 3</a>
+            <a class="dropdown-item" href="#">London</a>
+            <a class="dropdown-item" href="#">Mumbai</a>
+            <a class="dropdown-item" href="#">New York</a>
           </div>
         </li>
 
@@ -46,9 +46,7 @@
     <a class="nav-link" href="/login" style="display:none">Add Trip</a>
   {{/if}}
 </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/trips/{{eventId}}">My Trip</a>
-        </li>
+        
 
         {{#if userInSession}}
           <li class="nav-item">
@@ -67,19 +65,7 @@
             <a class="nav-link" href="/login">Login</a>
           </li>
         {{/if}}
-        <li class="nav-item">
-          <a class="nav-link" href="/user-profile">Profile</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Cities
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">London</a>
-            <a class="dropdown-item" href="#">Mumbai</a>
-            <a class="dropdown-item" href="#">New York</a>
-          </div>
-        </li>
+        
       </ul>
     </div>
   </nav>
