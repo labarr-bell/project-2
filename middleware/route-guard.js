@@ -22,20 +22,10 @@ const isLoggedOut = (req, res, next) => {
 //     next();
 // };
 
-// const isAdminOrEditor = (req, res, next) => {
-//     if (req.user.role === 'admin') {
-//         return res.redirect('/event-list') // how do the panels work?
-//     } else if (req.user.role === 'editor') {
-//         return res.redirect('/')
-//     } else if (req.user.role != 'admin' || req.user.role != 'editor') {
-//         return res.redirect('/login');
-//     }
-//     next();
-// }
+
 
 module.exports = {
     isLoggedIn,
     isLoggedOut,
-    // isAdmin
-    // isAdminOrEditor
+    //isAdmin
 };

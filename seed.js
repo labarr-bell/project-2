@@ -3,7 +3,7 @@ const Event = require('./models/Event.model');
 
 //Two steps in the seed file
 //1. open up the mongoose connection
-//2. add all of these documents to my colection
+//2. add all of these documents to my collection
 
 let events = [
     {
@@ -45,7 +45,7 @@ mongoose
   .connect(MONGODB_URI)
   .then((db) => {
     console.log('Connected to db: ', db.connections[0].name);
-    return Event.create(events);
+    return Event.insertMany(events);
   })
   .then((result) => {
     console.log(`Successfully added ${result.length} events.`);
