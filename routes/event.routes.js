@@ -52,6 +52,8 @@ router.get('/events/:eventId', (req, res) => {
         .catch((err) => console.log(err));
 })
 
+
+// delete one event 
 router.post('/events/:eventId/delete', (req, res, next) => {
     const {eventId} = req.params.eventId;
     Event.findByIdAndDelete(eventId)

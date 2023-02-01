@@ -1,21 +1,11 @@
-<h1>My Trips page</h1>
+<h1>My Trips</h1>
 
 
-
-  <h1>Choose a trip below</h1>
-
-
-<select>
-    {{#each trips}} 
-    <option value="{{this._id}}">{{this.tripName}} </option>
-    {{/each}}
-  </select>
-    <button > <a href="/trips/{{_id}}">See Trip</a></button>
-
-
-    </div>
-  </div>
-
-
-<p>see my trips 
-see the users by referencing an array </p>
+{{#each trips}}
+<h3>{{this.tripName}}</h3>
+<h4>{{this.description}}</h4>
+<button><a href="/trips/{{_id}}">Trip Itinerary</a></button>
+<form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
+    <button>Delete Trip</button>
+  </form>
+{{/each}}

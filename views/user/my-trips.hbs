@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Cam and Nicole Travel App</title>
-      <link rel="stylesheet" href="/stylesheets/style.css" />
-       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-   </head><h1>This is My Trips page</h1>
 
 {{#if userInSession}}
-  <h2>Welcome, {{userInSession.email}}!</h2>
-  <h1>Trip itinerary Page</h1>
+  <h2>{{userInSession.email}}'s Trips</h2>
 
   <div class="trip-container">
 
     <div class="trip-card">
-      <h2>{{this.tripName}}</h2>
+      <h2>Trip Name: {{this.tripName}}</h2>
       <h5>Description: {{this.description}}</h5>
       {{#each event}}
         <div class="event-card">
+          <h2>Event:</h2>
           <h2>{{eventName}}</h2>
           <img src="{{image}}" alt="" />
           <h5>Description: {{description}}</h5>
@@ -28,12 +17,10 @@
         <br />
       {{/each}}
 
+<button> <a href="/user-profile">Back to My Trips</a></button>
     </div>
 
   </div>
-  <button>
-    <a href="/user-profile">Reload Page</a>
-  </button>
 
 {{else}}
   <p>Still no logged in user, sorry!</p>

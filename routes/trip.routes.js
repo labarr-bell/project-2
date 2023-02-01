@@ -72,29 +72,15 @@ router.get("/trips/:tripId", isLoggedIn, (req, res, next) => {
 
 router.post('/trips/:tripId/delete', (req, res, next) => {
   const { tripId } = req.params;
+  console.log(typeof tripId)
   Trip.findByIdAndRemove(req.params.tripId)
   .then(() => {
-      res.redirect('/trips')
+      res.redirect('/user-profile')
   })
   .catch((err)=> {
       console.log('The error while deleting a trip is, ', err)
   })
 })
 
-// create the document and make the form visible to used to add an event
-
-// router.get('/add-event', (req, res) => {
-//     res.render('events/create')
-// })
-
-// read one document using params
-
-// router.get('/events/:eventId', (req, res) => {
-//     Event.findById(req.params.eventId)
-//         .then((singleEvent) => {
-//             res.render('events/event-details', singleEvent)
-//         })
-//         .catch((err) => console.log(err));
-// })
 
 module.exports = router;
