@@ -66,7 +66,7 @@ let events = [
     description: 'An outdoor garden filled with local flora, fauna and sometimes art!',
     category: 'Sightseeing',
     price: 0,
-    image: './images/the-high-line.png',
+    image: './images/the-high-line.jpeg',
     city: 'New York'
   },
   {
@@ -83,8 +83,10 @@ let events = [
 const MONGODB_URI =
   process.env.MONGODB_URI || 'mongodb://127.0.0.1/project-2';
 
+const connectionParams = { useNewUrlParser: true };
+
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, connectionParams)
   .then((db) => {
     console.log('Connected to db: ', db.connections[0].name);
     return Event.create(events);

@@ -1,10 +1,9 @@
 const User = require('../models/User.model');
-const Event = require('../models/Event.model');
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const saltRounds = 10 
+const saltRounds = 10
 const mongoose = require('mongoose');
-const { isLoggedIn, isLoggedOut} = require('../middleware/route-guard.js');
+const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
 const Trip = require('../models/Trip.model');
 
 // create the currentUser
@@ -15,7 +14,7 @@ router.get('/signup', isLoggedOut, (req, res) => {
 
 router.post('/signup', (req, res) => {
     console.log(req.body)
-    const {email, password } = req.body
+    const { email, password } = req.body
     if (!email || !password) {
         res.render('auth/signup', { errorMessage: "Please fill in all mandatory fields. Email and password are required." })
         return
@@ -57,7 +56,7 @@ router.post('/signup', (req, res) => {
         });
 })
 
-router.get('/login', isLoggedOut,  (req, res) => {
+router.get('/login', isLoggedOut, (req, res) => {
     console.log(req.session)
     res.render('auth/login')
 })
@@ -67,60 +66,58 @@ router.get('/login', isLoggedOut,  (req, res) => {
 router.post('/login', (req, res) => {
     console.log("SESSION =====>", req.session)
     console.log(req.body)
-    const {email,password} = req.body
+    const { email, password } = req.body
 
-    if(!email || !password){
-        res.render('auth/login',{errorMessage:'please enter an email or password'})
-    return
+    if (!email || !password) {
+        res.render('auth/login', { errorMessage: 'please enter an email or password' })
+        return
     }
 
-    User.findOne({email})
-    .then(user => {
-        console.log(user)
-        if(!user) {
-            res.render('auth/login', {errorMessage: "User not found please sign up. No account associated with email."})
-        } else if (bcrypt.compareSync(password, user.passwordHash)) {
-            req.session.currentUser = user.toObject()
-            delete req.session.currentUser.passwordHash
-            res.redirect('/user-profile')
-        } else {
-            res.render('auth/login', {errorMessage: "Incorrect password"})
-        }
-    })
-    .catch((err) => console.log(err));
+    User.findOne({ email })
+        .then(user => {
+            console.log(user)
+            if (!user) {
+                res.render('auth/login', { errorMessage: "User not found please sign up. No account associated with email." })
+            } else if (bcrypt.compareSync(password, user.passwordHash)) {
+                req.session.currentUser = user.toObject()
+                delete req.session.currentUser.passwordHash
+                res.redirect('/user-profile')
+            } else {
+                res.render('auth/login', { errorMessage: "Incorrect password" })
+            }
+        })
+        .catch((err) => console.log(err));
 })
 
 
 router.get('/user-profile', isLoggedIn, (req, res) => {
     const { _id } = req.session.currentUser
-    
-    Trip.find({ user: _id })
-    .then((trips) => {
 
-        res.render('user/user-profile', {trips})
-    })
-    .catch((err) => console.log(err));
+    Trip.find({ user: _id })
+        .then((trips) => {
+
+            res.render('user/user-profile', { trips })
+        })
+        .catch((err) => console.log(err));
 })
 
 router.post('/logout', (req, res, next) => {
     req.session.destroy(err => {
-      if (err) next(err);
-      res.redirect('/');
+        if (err) next(err);
+        res.redirect('/');
     });
-  });
+});
 
 
 
 
 
 //To do:
-// #1 Priority MY TRIPS PAGE 
-// populate home page - CAM to do....  
-// need home page - 
-// CSS - flexboxed/bootstrapped
-// images for event model 
-// drop down under ADD EVENT should include 5 categories (Sightseeing, Festival, Concert, Shopping, Food)
-// FILTER the cities drop down 
+// home page - in route styling - CAM WIP 
+// CSS - flexboxed/bootstrapped - in route - styling- CAM WIP
+// drop down under ADD EVENT should include 5 categories (Sightseeing, Festival, Concert, Shopping, Food) - Nicole WIP
+// FILTER the cities drop down - Nicole WIP
+// do we want to follow the tutorial and add cloudidanry instead of the image URL for create an event - cool and fun 
 
 
 // Done 
@@ -140,6 +137,8 @@ router.post('/logout', (req, res, next) => {
 // add to event schema add more cites - CAM/NIC - done
 // my-trips page -done
 // MY TRIPS PAGE - done
+// images for event model - done
+// #1 Priority MY TRIPS PAGE - done
 
 
 

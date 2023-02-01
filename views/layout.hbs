@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Cam and Nicole Travel App</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link
       rel="stylesheet"
@@ -22,6 +19,9 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
   </head>
   <header>
 
@@ -39,8 +39,24 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        {{! <form>
+          <input type="text" size="30" onkeyup="showResult(this.value)" />
+          <div id="livesearch" class="hide"></div>
+        </form> }}
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            {{! <div>
+              <input id="city-name-input" type="text" />
+              <button id="get-city-btn">Select Your City</button>
+            </div> }}
+
+            {{! <script>
+              function onClick() { document .getElementById('get-city-btn')
+              .addEventListener('click', () => { const userInput =
+              document.getElementById('city-name-input').value;
+              getEventInfo(userInput); }); };
+            </script> }}
 
             <li class="nav-item dropdown">
               <a
@@ -57,15 +73,19 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a
                   class="dropdown-item"
-                  href="#"
-                  onclick="getOption()"
+                  href="/api/event-cities"
+                  onclick="onClick()"
                 >London</a>
                 <a
                   class="dropdown-item"
-                  href="#"
-                  onclick="getOption()"
+                  href="/api/event-cities"
+                  onclick="onClick()"
                 >Mumbai</a>
-                <a class="dropdown-item" href="#" onclick="getOption()">New York</a>
+                <a
+                  class="dropdown-item"
+                  href="/api/event-cities"
+                  onclick="onClick()"
+                >New York</a>
               </div>
             </li>
 

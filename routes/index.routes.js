@@ -8,16 +8,5 @@ router.get("/", (req, res, next) => {
 
 
 
-// let filteredArray;
-// Event.find()
-// .then(result=>{
-//   for(i=0;result.length;i++){
-//     if(result[i].cities===userIputCitiies){
-//       filteredArrray.push(result[i])
-//     }
-//   }
-// })
-
-
 
 module.exports = router;
