@@ -5,6 +5,8 @@ const router = require('express').Router();
 const Trip = require('../models/Trip.model');
 const events = require("../config/events.json");
 const axios = require('axios').default;
+const fileUploader = require('../config/cloudinary.config');
+
 
 
 
@@ -14,15 +16,16 @@ const axios = require('axios').default;
 // create the event routes 
 // this route has the same action of the post form in create hbs page 
 
-router.post('/add-event', (req, res) => {
-    const { eventName, description, category, price, image, city } = req.body
-    Event.create({ eventName, description, category, price, image, city })
-        .then((result) => {
-            console.log("event has been created")
+router.post('/add-event', fileUploader.single('image'), (req, res) => {
+    const { eventName, description, category, price, city } = req.body
+    Event.create({ eventName: eventName, description: description, category: category, price: price, image: req.file.path, city: city })
+        .then(result => {
+            console.log(result);
             res.redirect('/events')
         })
         .catch((err) => console.log(err));
 })
+
 
 // read the document by finding all the events and render them
 
@@ -61,12 +64,12 @@ router.get('/events/:eventId', (req, res) => {
 
 // delete one event 
 router.post('/events/:eventId/delete', (req, res, next) => {
-    const { eventId } = req.params.eventId;
-    Event.findByIdAndDelete(eventId)
-        .then(() => {
+    const { eventId } = req.params;
+    Event.findByIdAndRemove(eventId)
+        .then((result) => {
+            console.log('The result after deleting the event is', result)
             res.redirect('/events')
         })
-
         .catch((err) => {
             console.log('The error while deleting the event-details is, ', err)
         })

@@ -6,14 +6,15 @@
     <div class="trip-card">
       <h2>Trip Name: {{this.tripName}}</h2>
       <h5>Description: {{this.description}}</h5>
+      <img src="{{this.image}}" alt="trip image" />
+
       {{#each event}}
-        <div class="event-card">
-          <h2>Event:</h2>
-          <h2>{{eventName}}</h2>
-          <img src="{{image}}" alt="" />
-          <h5>Description: {{description}}</h5>
-        </div>
-        <br />
+
+        <h2>Event:</h2>
+        <h4>{{eventName}}</h4>
+        <img src="{{image}}" alt="Event Picture" />
+        <h5>Description: {{description}}</h5>
+
       {{/each}}
 
       <button> <a href="/user-profile">Back to My Trips</a></button>

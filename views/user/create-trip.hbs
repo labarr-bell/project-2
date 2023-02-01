@@ -2,7 +2,7 @@
 {{#if userInSession}}
   <h2>Welcome, {{userInSession.email}}!</h2>
   <h3>Create Trip</h3>
-  <form action="/add-trip" method="POST">
+  <form action="/add-trip" method="POST" enctype="multipart/form-data">
     <label for="">
       Trip Name
       <input type="text" name="tripName" />
@@ -11,7 +11,11 @@
       Describe your trip
       <input type="text" name="description" />
     </label>
-    <button type="submit">Create trip</button>
+    <label for="">
+      Image
+      <input type="file" name="image" />
+    </label>
+    <button type="submit">Add Trip</button>
   </form>
 
   <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">

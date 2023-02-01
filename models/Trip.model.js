@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, trusted } = require("mongoose");
 
 const tripSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: "User" },
@@ -8,7 +8,8 @@ const tripSchema = new Schema({
         trim: true,
         required: true
     },
-    description: { type: 'String', trim: true, required: true }
+    description: { type: 'String', trim: true, required: true },
+    image: { type: String, trim: true }
 })
 
 const Trip = model("Trip", tripSchema);
