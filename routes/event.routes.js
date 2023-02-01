@@ -5,6 +5,7 @@ const router = require('express').Router();
 const Trip = require('../models/Trip.model');
 
 
+
 // create the event routes 
 // this route has the same action of the post form in create hbs page 
 
@@ -55,15 +56,16 @@ router.get('/events/:eventId', (req, res) => {
 
 // delete one event 
 router.post('/events/:eventId/delete', (req, res, next) => {
-    const {eventId} = req.params.eventId;
+    const { eventId } = req.params.eventId;
     Event.findByIdAndDelete(eventId)
-      .then(() => { res.redirect('/events') 
-    })
-      
-      .catch((err)=> {
-          console.log('The error while deleting the event-details is, ', err)
-      })
-  })
+        .then(() => {
+            res.redirect('/events')
+        })
+
+        .catch((err) => {
+            console.log('The error while deleting the event-details is, ', err)
+        })
+})
 
 
 module.exports = router;

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Cam and Nicole Travel App</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link
       rel="stylesheet"
@@ -38,15 +42,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-
-            <div class="search-wrapper"
-            <li class="nav-item">
-              <input type="search" id="search" placeholder="Search.." />
-            </li>
-            </div>
-
-
-
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -57,12 +52,20 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Cities
+                Select Your City
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">London</a>
-                <a class="dropdown-item" href="#">Mumbai</a>
-                <a class="dropdown-item" href="#">New York</a>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  onclick="getOption()"
+                >London</a>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  onclick="getOption()"
+                >Mumbai</a>
+                <a class="dropdown-item" href="#" onclick="getOption()">New York</a>
               </div>
             </li>
 
@@ -74,7 +77,8 @@
               {{#if userInSession}}
                 <a class="nav-link" href="/add-event">Add Event</a>
               {{else}}
-                <a class="nav-link" href="/add-event" style="display: none">Add Event</a>
+                <a class="nav-link" href="/add-event" style="display: none">Add
+                  Event</a>
               {{/if}}
             </li>
 

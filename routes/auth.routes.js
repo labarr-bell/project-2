@@ -119,9 +119,7 @@ router.post('/logout', (req, res, next) => {
 // need home page - 
 // CSS - flexboxed/bootstrapped
 // images for event model 
-// my-trips page 
 // drop down under ADD EVENT should include 5 categories (Sightseeing, Festival, Concert, Shopping, Food)
-// MY TRIPS PAGE 
 // FILTER the cities drop down 
 
 
@@ -140,6 +138,8 @@ router.post('/logout', (req, res, next) => {
 // add login log out, - done 
 // create event - done 
 // add to event schema add more cites - CAM/NIC - done
+// my-trips page -done
+// MY TRIPS PAGE - done
 
 
 

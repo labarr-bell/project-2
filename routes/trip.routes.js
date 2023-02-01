@@ -54,21 +54,6 @@ router.get("/trips/:tripId", isLoggedIn, (req, res, next) => {
     });
 });
 
-// na attempt at creating a route to the trip 
-// router.get("/my-trips/:tripId", isLoggedIn, (req, res, next) => {
-//   const { tripId } = req.params;
-//   Trip.findById(tripId)
-//     .populate("event")
-//     .then((trip) => {
-//       console.log("trip found", trip);
-//       res.render("user/user-profile", trip);
-//     })
-//     .catch((err) => {
-//       console.log("Something went wrong while getting trip id: ", err);
-//       next(err);
-//     });
-// });
-
 
 router.post('/trips/:tripId/delete', (req, res, next) => {
   const { tripId } = req.params;
