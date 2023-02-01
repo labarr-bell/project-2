@@ -107,10 +107,18 @@ router.post('/logout', (req, res, next) => {
 //TRIPS
 
 // populate home page - CAM to do....  
-// add to event schema add more cites - CAM/NIC
-// need home page - 
-// CSS
+// Add to event schema add more cites - CAM/NIC
+// Need home page 
 
+// CSS divided up
+
+// Cam
+// Sign up & Login
+// Index and Layouts
+
+// Nicole
+// Event and Trips
+// 
 
 // Done 
 // Make delete route - NICOLE - done
@@ -126,8 +134,5 @@ router.post('/logout', (req, res, next) => {
 // read a trip - done
 // add login log out, - done 
 // create event - done 
-
-
-
 
 module.exports = router
