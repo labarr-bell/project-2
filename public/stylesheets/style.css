@@ -201,5 +201,37 @@ input[type="password"] {
   display: flex; 
   flex-direction: column; 
   align-items: center;
+  }
 
+  .create-event-form {
+    background-color: #f2f2f2;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .create-event-form label {
+    margin-bottom: 20px;
+  }
+  .create-event-form input[type="text"],
+  .create-event-form input[type="email"],
+  .create-event-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  .create-event-form button[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
   }
