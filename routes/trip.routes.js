@@ -11,7 +11,7 @@ const fileUploader = require('../config/cloudinary.config');
 
 router.post("/add-trip", isLoggedIn, fileUploader.single('image'), (req, res) => {
   const { tripName, description } = req.body;
-  Trip.create({ tripName, description, user: req.session.currentUser._id, image: req.file.path })
+  Trip.create({ tripName: tripName, description: description, user: req.session.currentUser._id, image: req.file.path })
     .then(result => {
       console.log(result);
       res.redirect("/user-profile");

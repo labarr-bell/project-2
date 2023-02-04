@@ -89,7 +89,7 @@ mongoose
   .connect(MONGODB_URI, connectionParams)
   .then((db) => {
     console.log('Connected to db: ', db.connections[0].name);
-    return Event.create(events);
+    return Event.insertMany(events);
   })
   .then((result) => {
     console.log(`Successfully added ${result.length} events.`);
