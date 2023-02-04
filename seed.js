@@ -11,7 +11,7 @@ let events = [
     description: 'A big movie festival in Mumbai',
     category: 'Festival',
     price: 22,
-    image: './images/MAMI.png',
+    image: 'https://res.cloudinary.com/ddieot9rc/image/upload/v1675516923/movie-project/dfbxt5vfzowmulqpmk3t.png',
     city: 'Mumbai'
   },
   {
