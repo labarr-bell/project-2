@@ -1,29 +1,29 @@
-<h1>Create Event</h1>
-<div>
-  <form action="/add-event" method="POST" enctype="multipart/form-data">
-    <label for="">
+<div class="create-event-form">
+  <h2>Create Event</h2>
+  <form action="/add-event" method="POST">
+    <label>
       Event Name
-      <input type="text" name="eventName" />
+      <input type="text" name="eventName" placeholder="Enter event name">
     </label>
-    <label for="">
+    <label>
       Description
-      <input type="text" name="description" />
+      <input type="text" name="description" placeholder="Enter description">
     </label>
-    <label for="">
+    <label>
       Category
-      <input type="text" name="category" />
+      <input type="text" name="category" placeholder="Enter category">
     </label>
-    <label for="">
+    <label>
       Price
-      <input type="text" name="price" />
+      <input type="text" name="price" placeholder="Enter price">
     </label>
-    <label for="">
+    <label>
       Image
-      <input type="file" name="image" />
+      <input type="text" name="image" placeholder="Enter image URL">
     </label>
-    <label for="">
+    <label>
       City
-      <input type="text" name="city" />
+      <input type="text" name="city" placeholder="Enter city">
     </label>
     <button type="submit">Create Event</button>
   </form>

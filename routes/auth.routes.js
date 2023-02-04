@@ -119,6 +119,15 @@ router.post('/logout', (req, res, next) => {
 // FILTER the cities drop down - Nicole WIP
 // do we want to follow the tutorial and add cloudidanry instead of the image URL for create an event - cool and fun 
 
+// CSS divided up
+
+// Cam
+// Sign up & Login
+// Index and Layouts
+
+// Nicole
+// Event and Trips
+// 
 
 // Done 
 // Make delete route - NICOLE - done
@@ -139,9 +148,6 @@ router.post('/logout', (req, res, next) => {
 // MY TRIPS PAGE - done
 // images for event model - done
 // #1 Priority MY TRIPS PAGE - done
-
-
-
 
 
 module.exports = router

@@ -23,8 +23,10 @@
   <header>
 
     <div class="container">
-      <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-        <a class="navbar-brand" href="/"><b>Cam and Nicole Travel App</b></a>
+
+      <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" class="navbar bg-dark" data-bs-theme="dark">
+        <a class="navbar-brand" href="/"><b> Travel App</b></a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -32,14 +34,18 @@
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
+
           <span class="navbar-toggler-icon"></span>
         </button>
+<<<<<<< HEAD
         {{! <form>
           <input type="text" size="30" onkeyup="showResult(this.value)" />
           <div id="livesearch" class="hide"></div>
         </form> }}
+=======
+
+>>>>>>> 578e3622dc088895e8cd4b0ef2e4831bbae36a8a
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
@@ -110,11 +116,11 @@
 
             {{#if userInSession}}
               <li class="nav-item">
-                <a class="nav-link" href="/user-profile">My Trips</a>
+                <a class="nav-link" href="/my-trips/{{tripId}}">My Trips</a>
               </li>
               <li class="nav-item">
                 <form action="/logout" method="POST">
-                  <button type="submit"> Logout </button>
+                  <button type="submit" class="nav-link btn btn-danger"> Logout </button>
                 </form>
               </li>
             {{else}}
@@ -132,9 +138,28 @@
     </div>
   </header>
 
-  <body>
 
     {{{body}}}
+
+
+
+  {{!-- <footer class="py-5 page-footer footer">
+    <div class="container-fluid container-fluid-max">
+      <div class="row">
+        <div class="col-12 col-md-6 footer-child copyright">
+          Booking © 2023 All Rights Reserved
+        </div>
+        <div class="col-12 col-md-6 footer-child footer-links">
+          <a href="" class="mr-3">Privacy Policy</a>
+          <a href="">FAQ</a>
+          <div>
+            <small>Made by <a href=" " target="_blank">Nicole Bell and Cameron Aitcheson-Labarr</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> --}}
 
     <script src="/js/script.js"></script>
     <script
