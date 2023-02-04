@@ -5,7 +5,7 @@
   {{#each trips}}
     <h3>{{this.tripName}}</h3>
     <h4>{{this.description}}</h4>
-    <img src="{{this.image}}" alt="trip image" />
+    <img src="{{this.image}}" class="description-image" alt="trip image" />
     <button><a href="/trips/{{_id}}">Trip Itinerary</a></button>
     <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
       <button>Delete Trip</button>

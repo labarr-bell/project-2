@@ -1,29 +1,28 @@
-
-   
 <div class="login-form-container">
   <div class="login-form">
     <h2>Login</h2>
 
     <form action="/login" method="POST">
 
-    <label> Email
-      <input type="email" name="email" placeholder="inputemail@travelapp.com">
-    </label>
+      <label>
+        Email
+        <input
+          type="email"
+          name="email"
+          placeholder="inputemail@travelapp.com"
+        />
+      </label>
 
-    <label> Password
-      <input type="password" name="password" placeholder="********">
-    </label>
+      <label>
+        Password
+        <input type="password" name="password" placeholder="********" />
+      </label>
 
-    <button class="login-button" type="submit">Login</button>
+      <button class="login-button" type="submit">Login</button>
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-<<<<<<< HEAD
-
-  </form>
-=======
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
     </form>
   </div>
->>>>>>> 578e3622dc088895e8cd4b0ef2e4831bbae36a8a
 </div>
