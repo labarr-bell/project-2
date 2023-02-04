@@ -3,16 +3,8 @@ const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
   {
-    firstName: {
-      type: String,
-      trim: true,
-      required: true
-    },
-    lastName: {
-      type: String,
-      trim: true,
-      required: true
-    },
+    firstName: { type: String, trim: true },
+    lastName: { type: String, trim: true },
     email: {
       type: String,
       required: [true, 'Email is required.'],
@@ -21,17 +13,15 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true,
     },
-    passwordHash: {
+    passwordHash: { type: String, required: [true, 'Password is required.'] },
+    role: {
       type: String,
-      required: [true, 'Password is required.']
-    }, 
-  description: {
-      type: String,
-      trim: true,
+      enum: ['user', 'admin'],
+      default: 'user'
     },
-    myTrips:[{type: Schema.Types.ObjectId, ref: 'Event'}]
+    myTrips: [{ type: Schema.Types.ObjectId, ref: 'Event' }]
   },
-  {   
+  {
     timestamps: true
   }
 );

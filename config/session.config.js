@@ -1,6 +1,6 @@
 const session = require('express-session');
 
-const MongoStore = require('connect-mogno');
+const MongoStore = require('connect-mongo');
 
 const mongoose = require('mongoose');
 
@@ -19,7 +19,7 @@ module.exports = app => {
                 httpOnly: true,
                 // age of the cookie
                 // in milliseconds
-                maxAge: 50000
+                maxAge: 1000 * 60 * 60 * 24
             },
             store: MongoStore.create({
                 mongoUrl: process.env.MONGODB_URI || 'mongodb://127.0.0.1/project-2'

@@ -6,15 +6,7 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-// let filteredArrray;
-  // Event.find()
-  // .then(result=>{
-  //   for(i=0;result.length;i++){
-  //     if(result[i].cities===userIputCitiies){
-  //       filteredArrray.push(result[i])
-  //     }
-  //   }
-  // })
+
 
 
 module.exports = router;
