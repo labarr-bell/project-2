@@ -4,8 +4,17 @@
     <h1 style="font-size: 40px;">Explore</h1>
     <h2 style="font-size: 30px;">The Best Destinations for Tourists in the World</h2>
     <p style="font-size: 20px; padding: 20px;">Find your next adventure with us, discover new places, cultures and experiences. Let us guide you on your journey.</p>
+ {{#if userInSession}}
+  <a style="font-size: 20px; padding: 20px; background-color: blue; color: white; border-radius: 5px; text-align: center; display: inline-block;" class="nav-link" href="/my-trips">Check out your plans</a>
+{{else}}
+  <a style="font-size: 20px; padding: 20px; background-color: blue; color: white; border-radius: 5px; text-align: center; display: inline-block;" class="nav-link" href="/signup">Begin your journey</a>
+{{/if}}
   </div>
 </section>
+
+<br>
+<br>
+
 
                 <section id="top-container">
 	  		  <div class="carousel-container">
@@ -20,9 +29,9 @@
               <div class="carousel-item active">
                 <img src="/images/London.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Lorem Ipsum</h5>
+                  <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis perferendis quos, enim quasi mollitia labore architecto. Doloremque ullam accusamus quidem excepturi, magni non, eum, facere optio deleniti suscipit ex fuga!</h5>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet dui orci. Curabitur bibendum egestas est a fringilla. Ut ultricies augue blandit urna venenatis hendrerit. Suspendisse volutpat tincidunt sollicitudin. Quisque orci ex, sollicitudin quis lectus eget, congue mollis ligula. Praesent tincidunt elit fermentum volutpat rutrum. Morbi id est at mi ultrices pellentesque non pulvinar nibh. Morbi quis turpis consectetur, consectetur mauris sit amet, volutpat erat. Duis mattis rhoncus ornare. In augue neque, convallis quis magna non, gravida egestas leo.</p>
-                  <button type="button" class="btn btn-outline-light">Read More </button>
+                  <button type="button" class="btn btn-outline-light"> Read more</button>
                 </div>
               </div>
               <div class="carousel-item">
@@ -57,6 +66,7 @@
 
                 <br>
                 <br>
+                <br>
   <figure>
   <blockquote class="blockquote" style="text-align: center;">
     <p>"The most amazing website you will ever use in your life."</p>
@@ -65,7 +75,8 @@
     Omar Kemal, <cite title="Source Title">Ironhack</cite>
   </figcaption>
 </figure>
-
+  <br>
+                <br>
 <br>
       <section id="featured-destinations" class="featured-destinations bg-lightblue">
 
@@ -115,17 +126,29 @@
     </section>
 
     <br>
+    <br>
 
     <section>
+{{#if userInSession}}
   <div class="container" style="text-align: center;">
-    <h1 style="font-size: 40px;">Ready for your next trip?</h1>
-    <h2 style="font-size: 30px;"> Get in touch today! </h2>
-      <div class="col-12 col-md-auto d-flex justify-content-center align-items-center">
-    <a class="btn-cta" href="" role="button">Contact Us</a>
+    <h1 style="font-size: 40px;">When is your next trip?</h1>
+    <h2 style="font-size: 30px;">Create a trip and start your journey today! </h2>
+    <div class="col-12 col-md-auto d-flex justify-content-center align-items-center">
+      {{!-- <a class="btn-cta" href="" role="button">Contact Us</a> --}}
+      <a style="font-size: 20px; padding: 20px; background-color: blue; color: white; border-radius: 5px; text-align: center; display: inline-block;" class="nav-link" href="/my-trips">Create a trip!</a>
+    {{else}}
+      <div class="container" style="text-align: center;">
+        <h1 style="font-size: 40px;">Ready for your next trip?</h1>
+        <h2 style="font-size: 30px;"> Sign up and create a trip today! </h2>
+        <div class="col-12 col-md-auto d-flex justify-content-center align-items-center">
+          <a style="font-size: 20px; padding: 20px; background-color: blue; color: white; border-radius: 5px; text-align: center; display: inline-block;" class="nav-link" href="/signup">Begin your journey!</a>
+        {{/if}}
+
 </div>
   </div>
 </section>
 
+<br>
 <br>
 
 {{!-- <section id="contact-us" class="py-5 contact bg-lightblue">

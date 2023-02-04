@@ -338,3 +338,21 @@ input[type="password"] {
   height: 60%;
   padding: 3%;
 }
+
+.event-card:hover .description-image {
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+.event-card:hover {
+  filter: none;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+.event-card {
+  position: relative;
+}
+
+
+

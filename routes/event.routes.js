@@ -6,6 +6,7 @@ const Trip = require('../models/Trip.model');
 const events = require("../config/events.json");
 const axios = require('axios').default;
 const fileUploader = require('../config/cloudinary.config');
+const _ = require('lodash.groupby');
 
 
 

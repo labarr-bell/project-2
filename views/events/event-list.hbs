@@ -2,13 +2,46 @@
 
 <div class="card-body">
 
-  {{#each events}}
+  {{#each events }}
     <div class="event-card">
       <h2>{{eventName}}</h2>
+      <br>
       <img src="{{image}}" class="description-image" alt="" />
+      <br>
+      <br>
       <h5>Description: {{description}}</h5>
       <a href="/events/{{_id}}">More Details</a>
     </div>
   {{/each}}
 
 </div>
+
+
+
+
+
+
+
+
+
+
+{{!-- <h1>Browse events</h1>
+<div class="card-body">
+  {{#groupBy events "city"}}
+    <h2>{{key}}</h2>
+    <div class="row">
+      {{#each event}}
+        <div class="event-card col-sm-4">
+          <h3>{{eventName}}</h3>
+          <img src="{{image}}" class="description-image" alt="" />
+          <h5>Description: {{description}}</h5>
+          <a href="/events/{{_id}}">More Details</a>
+        </div>
+      {{/each}}
+    </div>
+  {{/groupBy}}
+</div> --}}
+
+
+
+
