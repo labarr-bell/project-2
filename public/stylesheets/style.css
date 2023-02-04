@@ -9,6 +9,16 @@ body {
   bottom: 0;
 }
 
+button.carousel-control-prev,
+button.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .navbar-brand {
   padding-left: 10px;
 }
