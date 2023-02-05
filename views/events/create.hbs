@@ -1,29 +1,44 @@
 <div class="create-event-form">
   <h2>Create Event</h2>
   <form action="/add-event" method="POST" enctype="multipart/form-data">
-    <label>
+    <label for="eventName">
       Event Name
       <input type="text" name="eventName" placeholder="Enter event name" />
     </label>
-    <label>
+    <label for="description">
       Description
-      <input type="text" name="description" placeholder="Enter description" />
+      <textarea
+        name="description"
+        rows="5"
+        cols="30"
+        placeholder="Enter description"
+      ></textarea>
     </label>
-    <label>
+    <label for="category">
       Category
-      <input type="text" name="category" placeholder="Enter category" />
+      <select id="category" name="category">
+        <option value="Sightseeing">Sightseeing</option>
+        <option value="Concert">Concert</option>
+        <option value="Food">Food</option>
+        <option value="Festival">Festival</option>
+        <option value="Shopping">Shopping</option>
+      </select>
     </label>
-    <label>
+    <label for="price">
       Price
-      <input type="text" name="price" placeholder="Enter price" />
+      <input type="text" name="price" placeholder="Enter event price" />
     </label>
-    <label>
+    <label for="image">
       Image
       <input type="file" name="image" />
     </label>
-    <label>
+    <label for="city">
       City
-      <input type="text" name="city" placeholder="Enter city" />
+      <select id="city" name="city">
+        <option value="London">London</option>
+        <option value="New York">New York</option>
+        <option value="Mumbai">Mumbai</option>
+      </select>
     </label>
     <button type="submit">Create Event</button>
 
