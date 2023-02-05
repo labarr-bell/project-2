@@ -26,5 +26,10 @@
       <input type="text" name="city" placeholder="Enter city" />
     </label>
     <button type="submit">Create Event</button>
+
+    {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+
   </form>
 </div>

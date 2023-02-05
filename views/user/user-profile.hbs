@@ -8,7 +8,53 @@
     <img src="{{this.image}}" class="description-image" alt="trip image" />
     <button><a href="/trips/{{_id}}">Trip Itinerary</a></button>
     <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
-      <button>Delete Trip</button>
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        data-bs-dismiss="alert"
+      >
+        Cancel Trip
+      </button>
+
+      {{! <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">OMG!!</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you really want to cancel your trip?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >No, just kidding.</button>
+              <button type="button" class="btn btn-primary">Ya, Cancel Trip</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        var myModal = document.getElementById('myModal') var myInput =
+        document.getElementById('myInput')
+        myModal.addEventListener('shown.bs.modal', function () { myInput.focus()
+        })</script> }}
     </form>
   {{/each}}
 

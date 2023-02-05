@@ -11,15 +11,22 @@ const fileUploader = require('../config/cloudinary.config');
 
 
 
+
 // create the event routes 
 // this route has the same action of the post form in create hbs page 
 
 router.post('/add-event', fileUploader.single('image'), (req, res) => {
     const { eventName, description, category, price, city } = req.body
+    const image = req.file
+    if (!eventName || !description || !image || !category || !price || !city) {
+        res.render('events/create', { errorMessage: "Please fill in all mandatory fields. All fields are required." })
+        return
+    }
     Event.create({ eventName: eventName, description: description, category: category, price: price, image: req.file.path, city: city })
         .then(result => {
             console.log(result);
             res.redirect('/events')
+            return
         })
         .catch((err) => console.log(err));
 })

@@ -1,7 +1,7 @@
 <div class="create-event-form">
   {{#if userInSession}}
     <h2>Welcome, {{userInSession.email}}!</h2>
-    <h3>Create Trip</h3>
+    <h3>Tell us about your trip.</h3>
     <form action="/add-trip" method="POST" enctype="multipart/form-data">
       <label for="">
         Trip Name
@@ -18,11 +18,10 @@
       <button type="submit">Add Trip</button>
     </form>
 
-    <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
-      <button type="submit" class="btn btn-danger">Cancel Trip</button>
-    </form>
-
   {{else}}
     <p>Still no logged in user, sorry!</p>
+  {{/if}}
+  {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
   {{/if}}
 </div>
