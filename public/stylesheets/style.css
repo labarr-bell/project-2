@@ -1,3 +1,5 @@
+/* Body and Other properties */
+
 @media (max-width: 3456px) {
   .nav,
   .header {
@@ -28,15 +30,33 @@
   }
 
   body {
+    padding-top: 70px;
     color: black;
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    top: 0;
+    /* top: 0; */
     bottom: 0;
     background-color: #2b3036;
     border: 0;
   }
+
+  body::-webkit-scrollbar {
+    width: 0.2em;
+    background-color: #F5F5F5;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    }
+    
+    body::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+    }
+
+    /* end of body & other properties */
+
+/* Carousel stylingç */
 
   button.carousel-control-prev,
   button.carousel-control-next {
@@ -279,13 +299,15 @@
     cursor: pointer;
   }
 
+  /* Footer section */
+
   .footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
-
+  
   .footer-row {
     width: 100%;
     display: flex;
@@ -293,57 +315,51 @@
     justify-content: center;
     align-items: center;
   }
-
+  
   .footer-col {
     width: 30%;
     padding: 20px;
     text-align: center;
   }
-
+  
   .footer-h4 {
     font-weight: bold;
     margin-bottom: 20px;
+    color: #F2C57C;
   }
-
+  
   .footer-ul {
     list-style: none;
     padding: 0;
   }
-
+  
   .footer-li {
     margin-bottom: 10px;
+    color: #1C3144;
   }
-
+  
   .footer-container1 {
-    background-color: #007bff;
-    color: white;
+    background-color: #96BDC6;
+    color: #1C3144;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
-
+  
   .footer-final-section {
-    background-color: #333;
+    background-color: #FF9FB2;
     padding: 20px 0;
+    color: #CD533B;
   }
-
-  /* .bg-secondary, .bg-dark {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .bg-dark{
-    margin-top: 0;
-    padding-top: 0;
-  } */
-
+  
   .footer-final-section {
     margin: 0;
     padding: 0;
     width: 100%;
-    /* position: sticky ; */
     bottom: 0;
   }
+
+  /* End of footer section */
 
   .btn-cta {
     background-color: #2196f3;
