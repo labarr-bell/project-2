@@ -4,6 +4,7 @@ const router = require('express').Router();
 // const {isAdmin} = require('../middleware/route-guard.js');
 const Trip = require('../models/Trip.model');
 const fileUploader = require('../config/cloudinary.config');
+const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
 
 
@@ -50,7 +51,7 @@ router.get('/add-event', (req, res) => {
 
 // read one document using params 
 
-router.get('/events/:eventId', (req, res) => {
+router.get('/events/:eventId', isLoggedIn, (req, res) => {
     let trips = []
     Trip.find({
         user: req.session.currentUser._id
