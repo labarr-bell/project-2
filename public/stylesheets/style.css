@@ -544,6 +544,17 @@
   font-weight: bold;
 }
 
+.city-heading {
+  text-align: center;
+  padding: 2%;
+}
+
+.browse-event-container-city {
+  padding-top: 7%;
+  background-color: #f2c57c;
+  width: 100vw;
+  height: 100vh;
+}
 /* color template
 Gold Crayola #F2C57C
 Prussian Blue #1C3144

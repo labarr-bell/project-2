@@ -1,9 +1,22 @@
-<h1>City Page</h1>
-
-{{#each result}}
-  <div class="event-card">
-    <h2>{{eventName}}</h2>
-    <img src="{{image}}" class="description-image" alt="" />
-    <a href="/events/{{_id}}">More Details</a>
+<div class="browse-event-container-city">
+  <div class="city-heading">
+    <h1> You could be here tomorrow.. </h1>
   </div>
-{{/each}}
+  <div class="card-body">
+
+    {{#each result}}
+      <div class="event-card">
+        <a href="/events/{{_id}}"><img
+            src="{{image}}"
+            class="description-image-browse-page"
+            alt=""
+          /></a>
+        <h5><a
+            href="/events/{{_id}}"
+            class="event-details-link"
+          >{{eventName}}</a></h5>
+      </div>
+    {{/each}}
+  </div>
+
+</div>
