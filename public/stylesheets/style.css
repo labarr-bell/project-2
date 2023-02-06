@@ -43,20 +43,20 @@
 
   body::-webkit-scrollbar {
     width: 0.2em;
-    background-color: #F5F5F5;
-    }
-    
-    body::-webkit-scrollbar-thumb {
+    background-color: #f5f5f5;
+  }
+
+  body::-webkit-scrollbar-thumb {
     background-color: #000000;
-    }
-    
-    body::-webkit-scrollbar-thumb:hover {
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
     background-color: #555555;
-    }
+  }
 
-    /* end of body & other properties */
+  /* end of body & other properties */
 
-/* Carousel stylingç */
+  /* Carousel stylingç */
 
   button.carousel-control-prev,
   button.carousel-control-next {
@@ -307,7 +307,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .footer-row {
     width: 100%;
     display: flex;
@@ -315,43 +315,43 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .footer-col {
     width: 30%;
     padding: 20px;
     text-align: center;
   }
-  
+
   .footer-h4 {
     font-weight: bold;
     margin-bottom: 20px;
-    color: #F2C57C;
+    color: #f2c57c;
   }
-  
+
   .footer-ul {
     list-style: none;
     padding: 0;
   }
-  
+
   .footer-li {
     margin-bottom: 10px;
-    color: #1C3144;
+    color: #1c3144;
   }
-  
+
   .footer-container1 {
-    background-color: #96BDC6;
-    color: #1C3144;
+    background-color: #96bdc6;
+    color: #1c3144;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
-  
+
   .footer-final-section {
-    background-color: #FF9FB2;
+    background-color: #ff9fb2;
     padding: 20px 0;
-    color: #CD533B;
+    color: #cd533b;
   }
-  
+
   .footer-final-section {
     margin: 0;
     padding: 0;
@@ -562,6 +562,9 @@
   font-weight: bold;
 }
 
+.my-trip-container {
+  padding-top: 7%;
+}
 
 /* color template
 Gold Crayola #F2C57C
