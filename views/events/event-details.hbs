@@ -1,4 +1,4 @@
-
+{{#if userInSession}}
 <div class="event-details-page">
 <h1>Here's more details about the Event</h1>
 <div class= "card-body"></div>
@@ -10,11 +10,15 @@
 <h5>Location: {{singleEvent.city}}</h5>
 <img src="{{singleEvent.image}}" alt="">
 
-  <form id="delete-form" action="/events/:id/delete" method="POST">
-    <button>Delete Event</button>
-  </form>
-  
-  <br>
+    <form id="add-to-trips" action="/trips/{{singleEvent._id}}" method="POST">
+      <select name="tripId">{{#each trips}}
+          <option value="{{this._id}}">{{this.tripName}} </option>
+        {{/each}}
+      </select>
+      <button>Add to Trips</button>
+    </form>
+  </div>
+
 
   <form id="add-to-trips" action="/trips/{{singleEvent._id}}" method="POST">
   <select name="tripId">{{#each trips}} 
@@ -25,3 +29,8 @@
 </form>
 </div>
 </div>
+{{else}}
+  <h3>Please sign up and create an account.</h3>
+  <button class="sign-up-button" type="submit"><a href="/signup">Create Account</a></button>
+{{/if}}
+
