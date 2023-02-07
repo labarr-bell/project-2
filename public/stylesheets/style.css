@@ -624,6 +624,87 @@
   align-items: center;
 }
 
+/* event details */
+
+.event-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7%;
+  background-color: #96BDC6;
+  height: 100vh;
+  justify-content: center;
+}
+.event-details-card-body {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 7px solid gray;
+  border-radius: 10px;
+  justify-content: center;
+}
+.event-details-description-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 20px 0;
+}
+.event-details-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+.event-details-form-select {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.event-details-form-button {
+  width: 120%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* city page */
+
+.browse-event-container-city {
+  padding-top: 7%;
+  background-color: #f2c57c;
+
+  height: 100vh;
+}
+
+/* error styling */
+
+.error-styling{
+  display: flex;
+  flex-direction: column;
+  /* align-content: center;
+  justify-content: center; */
+}
+
+.error-button-styling{
+  display: flex;
+  width: 40%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-content: center;
+  justify-content: center;
+}
+
 /* color template
 Gold Crayola #F2C57C
 Prussian Blue #1C3144

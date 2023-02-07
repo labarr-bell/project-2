@@ -74,6 +74,4 @@ router.post('/trips/:tripId/delete', (req, res, next) => {
     })
 })
 
-
-
 module.exports = router;

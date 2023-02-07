@@ -6,13 +6,6 @@ const Trip = require('../models/Trip.model');
 const fileUploader = require('../config/cloudinary.config');
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
-
-
-
-
-
-
-
 // create the event routes 
 // this route has the same action of the post form in create hbs page 
 

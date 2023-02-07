@@ -1,6 +1,5 @@
 <div class="my-trip-container">
   <div class="head-container">
-  <h1>My Trips</h1>
 </div>
   {{#if trips}}
 <div class="trip-card-body">
@@ -22,11 +21,14 @@
     {{/each}}
     </div>
 </div>
-  {{else}}
-    <h3>You have not created a trip yet.</h3>
-    <button><a class="nav-link" href="/trips">Add Trip</a></button>
 
+  {{else}}
+  <div class="error-styling">
+    <h3>You have not created a trip yet.</h3>
+    <button class="error-button-styling"><a class="nav-link" href="/trips">Add Trip</a></button>
+    </div>
   {{/if}}
+
 
 
 </div>
