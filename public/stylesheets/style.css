@@ -472,12 +472,15 @@
     margin: 0 auto;
     height: 100vh;
     background-color: #2b3036;
+    overflow: hidden;
   }
 
   .internal-container,
   .create-event-form,
   .my-trip-internal-container {
     position: relative;
+    overflow: hidden;
+    overflow-wrap: normal;
   }
   .create-trip-image,
   .create-event-image {
