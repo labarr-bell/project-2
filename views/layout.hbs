@@ -68,18 +68,15 @@
               <div class="dropdown-menu col-sm-2" aria-labelledby="navbarDropdown">
                 <a
                   class="dropdown-item"
-                  href="/api/event-cities"
-                  onclick="onClick()"
+                  href="/city/London"
                 >London</a>
                 <a
                   class="dropdown-item"
-                  href="/api/event-cities"
-                  onclick="onClick()"
+                  href="/city/Mumbai"
                 >Mumbai</a>
                 <a
                   class="dropdown-item"
-                  href="/api/event-cities"
-                  onclick="onClick()"
+                  href="/city/New-York"
                 >New York</a>
               </div>
             </li>
@@ -108,7 +105,7 @@
 
             {{#if userInSession}}
               <li class="nav-item">
-                <a class="nav-link" href="/my-trips/{{tripId}}">My Trips</a>
+                <a class="nav-link" href="/user-profile">My Trips</a>
               </li>
               <li class="nav-item">
                 <form action="/logout" method="POST">
