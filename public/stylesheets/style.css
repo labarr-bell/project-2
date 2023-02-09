@@ -1,6 +1,6 @@
 /* Body and Other properties */
 
-@media (max-width: 3456px) {
+@media (max-width: 5000px) {
   .nav,
   .header {
     background-color: #f2f2f2;
@@ -414,7 +414,7 @@
     padding: 1%;
     justify-content: center;
     align-items: center;
-    background-color: #2b3036;
+    background-color: gray;
     margin: 1%;
     flex-shrink: 1;
   }
@@ -431,7 +431,7 @@
   }
 
   .event-details-link:visited {
-    color: #96bdc6;
+    color: #1c3144;
     text-decoration: none;
   }
 
@@ -510,10 +510,12 @@
 }
 
 .trip-container {
+  padding-top: 7%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #2b3036;
 }
 
 .trip-card {
@@ -583,12 +585,9 @@
   color: white;
 }
 
-.head-container {
-  display: flex;
-}
-
 .trip-card-body {
   display: flex;
+  justify-content: center;
 }
 
 .my-trip-card-container {
@@ -598,13 +597,54 @@
   padding: 3%;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 25%;
+  width: 500px;
   text-align: center;
   /* display: inline-block; */
   margin: 1%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.back-to-trips-btn:link {
+  color: white;
+  text-decoration: none;
+}
+
+.back-to-trips-btn:hover {
+  color: #f2c57c;
+  text-decoration: none;
+}
+
+.btn-trip-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #2b3036;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 1%;
+  font-weight: bold;
+  border-radius: 12px;
+}
+.btn-trip-button-delete {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ff9fb2;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 8%;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+}
+
+.description-image-my-trips {
+  padding-bottom: 4%;
+}
+
+.btn-trip-button:hover {
+  text-decoration: none;
+  color: white;
 }
 
 /* event details */
@@ -665,7 +705,6 @@
 .browse-event-container-city {
   padding-top: 7%;
   background-color: #f2c57c;
-
   height: 100vh;
 }
 

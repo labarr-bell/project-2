@@ -8,13 +8,12 @@
     
       <h3>{{this.tripName}}</h3>
       <h5><em>{{this.description}}</em></h5>
-      <button class="btn trip-button"><a href="/trips/{{_id}}" class="btn">Trip Itinerary</a></button>
-      <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
-        <button class="btn trip-button">Delete Trip</button>
-      </form>
-    
-      
          <img src="{{this.image}}" class="description-image-my-trips" alt="trip image" />
+
+         <button class="btn-trip-button"><a href="/trips/{{_id}}" class="btn-trip-button">Trip Itinerary</a></button>
+      <form id="delete-form" action="/trips/{{_id}}/delete" method="POST">
+        <button class="btn-trip-button-delete">Delete Trip</button>
+      </form>
       
       </div>
   
