@@ -519,11 +519,11 @@
 }
 
 .trip-container {
-  padding-top: 7%;
+  padding-top: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 150vh;
   background-color: #2b3036;
 }
 
@@ -551,6 +551,10 @@
   object-fit: cover;
   margin: 2rem 0;
   border-radius: 10px;
+}
+
+.my-trips-events-page{
+  /* padding-top: 7%; */
 }
 
 .event-title {
