@@ -15,10 +15,10 @@
           <option value="{{this._id}}">{{this.tripName}} </option>
         {{/each}}
       </select>
-      <button class="event-details-form-button">Add to Trips</button>
+      <button class="event-details-form-button">Add to My Trips</button>
     </form>
      <form id="delete-form" class="event-details-form" action="/events/{{singleEvent._id}}/delete" method="POST">
-      <button class="event-details-form-button">Delete Event</button>
+      <button class="event-details-form-button-delete">Delete Event</button>
      </form>
   </div>
 </div>
