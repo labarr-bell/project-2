@@ -553,10 +553,6 @@
   border-radius: 10px;
 }
 
-.my-trips-events-page{
-  /* padding-top: 7%; */
-}
-
 .event-title {
   margin: 2rem 0;
   font-weight: bold;
@@ -766,6 +762,15 @@
 .github-links:hover {
   color: white;
   text-decoration: none;
+}
+
+/* nav bar styling */
+
+.navbar {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 /* color template
