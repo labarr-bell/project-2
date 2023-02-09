@@ -72,6 +72,11 @@
     padding-bottom: 10px;
   }
 
+  .navbar {
+    float: left;
+    width: 100%;
+  }
+
   .navbar-brand {
     padding-left: 10px;
     border: 0;
