@@ -1,4 +1,3 @@
-
 /* Body and Other properties */
 
 @media (max-width: 3456px) {
@@ -6,7 +5,6 @@
   .header {
     background-color: #f2f2f2;
     display: flex;
-    
   }
 
   html {
@@ -160,7 +158,6 @@
     justify-content: center;
   }
 
-
   .login-form-container {
     display: flex;
     justify-content: center;
@@ -211,7 +208,6 @@
     align-items: center;
   }
 
-
   .login-button:link {
     text-decoration: none;
   }
@@ -243,7 +239,6 @@
     align-items: center;
     margin: 0 auto;
   }
-
 
   .log-in-container {
     width: 300px;
@@ -307,7 +302,6 @@
   }
 
   /* Footer section */
-
 
   .footer-container {
     display: flex;
@@ -409,6 +403,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
   }
   .event-card {
     display: flex;
@@ -421,6 +416,7 @@
     align-items: center;
     background-color: #2b3036;
     margin: 1%;
+    flex-shrink: 1;
   }
 
   .event-card:hover {
@@ -456,7 +452,6 @@
   /* create events and trips pages  */
 
   .create-event-container,
-
   .create-trip-container,
   .my-trip-container {
     display: flex;
@@ -468,7 +463,6 @@
   }
 
   .internal-container,
-
   .create-event-form,
   .my-trip-internal-container {
     position: relative;
@@ -620,7 +614,7 @@
   flex-direction: column;
   align-items: center;
   padding: 7%;
-  background-color: #96BDC6;
+  background-color: #96bdc6;
   height: 100vh;
   justify-content: center;
 }
@@ -677,14 +671,14 @@
 
 /* error styling */
 
-.error-styling{
+.error-styling {
   display: flex;
   flex-direction: column;
   /* align-content: center;
   justify-content: center; */
 }
 
-.error-button-styling{
+.error-button-styling {
   display: flex;
   width: 40%;
   padding: 10px;
